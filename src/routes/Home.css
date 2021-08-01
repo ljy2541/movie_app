@@ -17,8 +17,9 @@
   padding: 50px;
   width: 80%;
   padding-top: 70px;
+  color: #fff;
 }
-
+ 
 @media screen and (max-width: 1090px) {
   .movies {
     grid-template-columns: 1fr;

@@ -5,10 +5,12 @@ import "./Navigation.css";
 function Navigation(){
     return (
     <div className="nav">
-        <Link to="/">Home</Link>
-        <Link to="/About">About</Link>
+        <div className="nav__button">
+            <Link to="/">홈</Link>
+            <Link to="/About">소개</Link>
+        </div>
     </div>
     )
 }
-
+ 
 export default Navigation;

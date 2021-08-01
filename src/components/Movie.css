@@ -1,15 +1,12 @@
 .movies .movie {
   background-color: white;
-  margin-bottom: 70px;
   font-weight: 300;
   border-radius: 5px;
   color: #adaeb9;
-  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
-    0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
 }
 
 .movies .movie a {
-
+  display: flex;
   text-decoration: none;
   color: inherit;
 }
@@ -18,13 +15,29 @@
   position: relative;
   max-width: 100%;
   width: 100%;
-  margin-right: 30px;
-  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
-    0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+  margin: auto;
+}
+  
+.movie_bg{
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top:0;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .movie__data {
   display: none;
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+  color: #fff;
+}
+
+
+.movie:hover .movie_bg, .movie:hover .movie__data{
+  display: block;
 }
 
 .movie .movie__title,
@@ -36,7 +49,7 @@
 .movie .movie__title {
   margin-bottom: 5px;
   font-size: 24px;
-  color: #2c2c2c;
+  color: #fff;
 }
 
 .movie .movie__genres {

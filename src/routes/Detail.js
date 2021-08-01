@@ -1,4 +1,5 @@
 import React from "react";
+import "./Detail.css";
 
 class Detail extends React.Component{
     componentDidMount(){
@@ -12,10 +13,14 @@ class Detail extends React.Component{
         const {location} = this.props;
        
         if(location.state){
-            return <span>{location.state.title}</span>
+            return (
+                <section className="background__img">
+                    <div>{location.state.title}</div>
+                </section>
+            )
         } else{
             return null;
         }
     }
-}
+} 
 export default Detail
