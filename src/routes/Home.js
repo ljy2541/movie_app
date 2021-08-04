@@ -27,13 +27,13 @@ class Home extends React.Component{
         data: {movies}
       }
     } = await axios.get("https://yts-proxy.now.sh/list_movies.json?genre=sport");
-    this.setState({ sport_movies:movies, isLoading: false });
+    this.setState({ sport_movies:movies});
     var{
       data: {
         data: {movies}
       }
     } = await axios.get("https://yts-proxy.now.sh/list_movies.json?genre=comedy");
-    this.setState({ comedy_movies:movies, isLoading: false });
+    this.setState({ comedy_movies:movies});
     var{
       data: {
         data: {movies}
@@ -48,6 +48,7 @@ class Home extends React.Component{
   }
   render(){    
     const { isLoading, action_movies, sport_movies, comedy_movies, family_movies } = this.state;
+    console.log(action_movies);
     return ( 
       <section className="container">
         {isLoading ? (
@@ -60,8 +61,6 @@ class Home extends React.Component{
             <Swiper
               spaceBetween={10}
               slidesPerView={8}
-              onSlideChange={() => console.log('slide change')}
-              onSwiper={(swiper) => console.log(swiper)}
             >      
             {action_movies.map(movie => (
               <SwiperSlide>
@@ -73,6 +72,7 @@ class Home extends React.Component{
                 summary={movie.summary} 
                 poster={movie.medium_cover_image}
                 genres={movie.genres}
+                background_image={movie.background_image}
               />
               </SwiperSlide>
             ))}            
@@ -82,8 +82,6 @@ class Home extends React.Component{
             <Swiper
               spaceBetween={10}
               slidesPerView={8}
-              onSlideChange={() => console.log('slide change')}
-              onSwiper={(swiper) => console.log(swiper)}
             > 
               {sport_movies.map(sport => (
                 <SwiperSlide>
@@ -95,6 +93,7 @@ class Home extends React.Component{
                   summary={sport.summary} 
                   poster={sport.medium_cover_image}
                   genres={sport.genres}
+                  background_image={sport.background_image}
                 />
                 </SwiperSlide>
               ))}
@@ -104,8 +103,6 @@ class Home extends React.Component{
             <Swiper
               spaceBetween={10}
               slidesPerView={8}
-              onSlideChange={() => console.log('slide change')}
-              onSwiper={(swiper) => console.log(swiper)}
             > 
               {comedy_movies.map(comedy => (
                 <SwiperSlide>
@@ -117,6 +114,7 @@ class Home extends React.Component{
                   summary={comedy.summary} 
                   poster={comedy.medium_cover_image}
                   genres={comedy.genres}
+                  background_image={comedy.background_image}
                 />
                 </SwiperSlide>
               ))}
@@ -126,8 +124,6 @@ class Home extends React.Component{
             <Swiper
               spaceBetween={10}
               slidesPerView={8}
-              onSlideChange={() => console.log('slide change')}
-              onSwiper={(swiper) => console.log(swiper)}
             > 
               {family_movies.map(family => (
                 <SwiperSlide>
@@ -139,6 +135,7 @@ class Home extends React.Component{
                   summary={family.summary} 
                   poster={family.medium_cover_image}
                   genres={family.genres}
+                  background_image={family.background_image}
                 />
                 </SwiperSlide>
               ))}

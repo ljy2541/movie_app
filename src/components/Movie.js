@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import "./Movie.css";
 
 
-function Movie({ id, year, title, summary, poster, genres }) {
+function Movie({ id, year, title, summary, poster, genres, background_image }) {
   return (
     <div className="movie">
       <Link
@@ -15,7 +15,8 @@ function Movie({ id, year, title, summary, poster, genres }) {
             title,
             summary,
             poster,
-            genres
+            genres,
+            background_image
           }
         }}
       > 
@@ -43,7 +44,8 @@ Movie.propTypes = {
   title: PropTypes.string.isRequired,
   summary: PropTypes.string.isRequired,
   poster: PropTypes.string.isRequired,
-  genres: PropTypes.arrayOf(PropTypes.string).isRequired
+  genres: PropTypes.arrayOf(PropTypes.string).isRequired,
+  background_image: PropTypes.string.isRequired
 };
 
 export default Movie;
